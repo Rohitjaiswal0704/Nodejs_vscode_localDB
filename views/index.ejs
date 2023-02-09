@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="container">
+
+    <div class="screen1">
+      <form class="screen1_form" action="/update/<%= rohit%>" method="post">
+          <textarea class="textarea" name="updata" id="" cols="30" rows="10"><%= filedata%></textarea>
+          <button class="btnupdate">Update File</button>
+      </form>
+    </div>
+
+    <div class="panel">
+      <form action="/create" method="post">
+        <input type="text" name="filename" placeholder="filesystem.txt">
+      </form>
+      <ul>
+        <%files.forEach((file)=>{ %>
+           <li>
+            <a href="/file/<%=file%>"><%=file%></a>
+            <a href="/delete/<%=file%>">❌</a>
+           </li>
+        <%}) %>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
